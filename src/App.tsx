@@ -11,6 +11,7 @@ import NoteApp from './components/NoteApp.tsx';
 import QuizApp from './components/QuizApp.tsx';
 import ImageGallery from './components/ImageGallery.tsx';
 import Chat from './components/Chat.tsx'; 
+import Graph from './components/Graph.tsx';
 
 const tabs = [
   { name: 'Counter', component: <Counter /> },
@@ -24,6 +25,7 @@ const tabs = [
   { name: 'QuizApp', component: <QuizApp /> },
   { name: 'ImageGallery', component: <ImageGallery /> },
   { name: 'Chat', component: <Chat /> },
+  { name: 'Graph', component: <Graph /> },
 ];
 
 const App: React.FC = () => {
