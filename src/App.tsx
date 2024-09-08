@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from "react";
 import './App.css';
+import Counter from './components/Counter.tsx';
+import Todo from './components/Todo.tsx';
+import Timer from './components/Timer.tsx';
+import Calculator from './components/Calculator.tsx'; 
+import ProfileCard from './components/ProfileCard.tsx'; 
+import WeatherApp from './components/WeatherApp.tsx';
+import Calendar from './components/Calendar.tsx';
+import NoteApp from './components/NoteApp.tsx';
+import QuizApp from './components/QuizApp.tsx';
+import ImageGallery from './components/ImageGallery.tsx';
 
-function App() {
+
+const tabs = [
+  { name: 'Counter', component: <Counter /> },
+  { name: 'TodoApp', component: <Todo /> },
+  { name: 'TimerApp', component: <Timer /> },
+  { name: 'Calculator', component: <Calculator /> },
+  { name: 'ProfileCard', component: <ProfileCard /> },
+  { name: 'WeatherApp', component: <WeatherApp /> },
+  { name: 'Calendar', component: <Calendar /> },
+  { name: 'NoteApp', component: <NoteApp /> },
+  { name: 'QuizApp', component: <QuizApp /> },
+  { name: 'ImageGallery', component: <ImageGallery /> },
+];
+
+const App: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<string>('Counter');
+
+  const handleTabClick = (tabName: string) => {
+    setActiveTab(tabName);
+  };
+
+  const renderActiveComponent = () => {
+    const activeTabContent = tabs.find(tab => tab.name === activeTab);
+    return activeTabContent?.component;
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="tab-navigation">
+        {tabs.map(tab => (
+          <button
+            key={tab.name}
+            className={`tab-button ${activeTab === tab.name ? 'active' : ''}`}
+            onClick={() => handleTabClick(tab.name)}
+          >
+            {tab.name}
+          </button>
+        ))}
+      </div>
+      <div className="tab-content">
+        {renderActiveComponent()}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

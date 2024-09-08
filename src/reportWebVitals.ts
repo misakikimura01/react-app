@@ -1,4 +1,4 @@
-import { ReportHandler } from 'web-vitals';
+import type { ReportHandler } from 'web-vitals';  // "type" を追加して型のみをインポート
 
 const reportWebVitals = (onPerfEntry?: ReportHandler) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
