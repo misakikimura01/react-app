@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import './App.css';
 import Counter from './components/Counter.tsx';
 import Todo from './components/Todo.tsx';
@@ -10,7 +10,7 @@ import Calendar from './components/Calendar.tsx';
 import NoteApp from './components/NoteApp.tsx';
 import QuizApp from './components/QuizApp.tsx';
 import ImageGallery from './components/ImageGallery.tsx';
-
+import Chat from './components/Chat.tsx'; 
 
 const tabs = [
   { name: 'Counter', component: <Counter /> },
@@ -23,6 +23,7 @@ const tabs = [
   { name: 'NoteApp', component: <NoteApp /> },
   { name: 'QuizApp', component: <QuizApp /> },
   { name: 'ImageGallery', component: <ImageGallery /> },
+  { name: 'Chat', component: <Chat /> },
 ];
 
 const App: React.FC = () => {
