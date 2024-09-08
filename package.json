@@ -6,6 +6,8 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "axios": "^1.7.7",
     "dayjs": "^1.11.13",
     "html-to-image": "^1.11.11",
